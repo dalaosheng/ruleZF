@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.zhwld.iscada.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zhwld.iscada.client.controller.IndexController">
+   <children>
+      <TabPane prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="基本配置">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="130.0" layoutY="20.0" spacing="8.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="205.0">
+                           <children>
+                              <HBox alignment="CENTER" styleClass="border_hbox" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="20.0">
+                                 <children>
+                                    <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" text="基本配制">
+                                       <HBox.margin>
+                                          <Insets left="25.0" />
+                                       </HBox.margin></Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="50.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="110.0" text="名称：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField editable="false" maxWidth="1.7976931348623157E308" minWidth="200.0" promptText="默认通道" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="110.0" text="通道规约类型：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="channelRuleComboBox" editable="true" minWidth="200.0" promptText="Modbus规约" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="110.0" text="请求设备地址：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="channelRuleDeviceAddrTextField" maxWidth="1.7976931348623157E308" minWidth="200.0" promptText="01" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="110.0" text="发送时间间隔(ms)：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="发送时间间隔(ms)：" />
+                                       </tooltip>
+                                    </Label>
+                                    <TextField fx:id="dataTimeIntervalTextField" editable="false" maxWidth="1.7976931348623157E308" minWidth="200.0" promptText="1000" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="80.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="110.0" text="转发规约类型：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="ruleTypeComboBox" editable="true" minWidth="200.0" promptText="IEC101规约" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="140.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="110.0" text="转发规约参数：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="ruleParamButton" minWidth="200.0" mnemonicParsing="false" text="请选择规约参数" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="140.0" layoutY="30.0" spacing="8.0" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <HBox alignment="CENTER" styleClass="border_hbox" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="20.0">
+                                 <children>
+                                    <Label fx:id="label11" alignment="CENTER" contentDisplay="CENTER" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" text="串口配制" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="88.0" text="串口号：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="uartComboBox" editable="true" minWidth="200.0" promptText="串口1" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="80.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="88.0" text="波特率：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="baudrateComboBox" editable="true" minWidth="200.0" promptText="9600 bps" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="88.0" text="数据位：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="databitsComboBox" editable="true" minWidth="200.0" promptText="8位" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="88.0" text="停止位：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="stopbitsComboBox" editable="true" minWidth="200.0" promptText="1位" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" spacing="4.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" minWidth="88.0" prefWidth="88.0" text="校验位：" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="parityComboBox" editable="true" minWidth="200.0" promptText="无校验" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="2.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="规约发送帧配置">
+               <content>
+                  <SplitPane dividerPositions="0.8993135011441648" orientation="VERTICAL">
+                     <items>
+                        <TableView fx:id="tabRule">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <columns>
+                              <TableColumn fx:id="frameTableColumn" prefWidth="75.0" text="帧类别" />
+                              <TableColumn fx:id="codeTableColumn" prefWidth="75.0" text="功能码(H)" />
+                              <TableColumn fx:id="addrTableColumn" prefWidth="75.0" text="起始地址(H)" />
+                              <TableColumn fx:id="numTableColumn" prefWidth="75.0" text="请求数量(H)" />
+                           </columns>
+                        </TableView>
+                        <AnchorPane>
+                           <children>
+                              <HBox spacing="12.0" AnchorPane.rightAnchor="5.0">
+                                 <children>
+                                    <Button fx:id="add" mnemonicParsing="false" prefWidth="60.0" text="添加">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="delete" mnemonicParsing="false" prefWidth="60.0" text="删除" />
+                                    <Button fx:id="exit" mnemonicParsing="false" prefWidth="60.0" text="退出">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets top="8.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+            <Tab text="点类型配置">
+               <content>
+                  <SplitPane dividerPositions="0.17333333333333334">
+                     <items>
+                        <TreeView fx:id="dotTreeView" />
+                        <SplitPane dividerPositions="0.8993135011441648" orientation="VERTICAL">
+                           <items>
+                              <TableView fx:id="tabDot">
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <columns>
+                                    <TableColumn fx:id="deviceColumn" prefWidth="75.0" text="装置型号" />
+                                 </columns>
+                              </TableView>
+                              <AnchorPane>
+                                 <children>
+                                    <HBox spacing="12.0" AnchorPane.rightAnchor="5.0">
+                                       <children>
+                                          <Button fx:id="addRow" mnemonicParsing="false" text="插入行">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="deleteRow" mnemonicParsing="false" text="删除行" />
+                                          <Button fx:id="csvImport" mnemonicParsing="false" text="导入CSV文件" />
+                                          <Button fx:id="exitDot" mnemonicParsing="false" text="退出">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets top="8.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+          <Tab text="规约转发配置">
+               <content>
+                  <SplitPane dividerPositions="0.9016018306636155" orientation="VERTICAL">
+                     <items>
+                        <SplitPane dividerPositions="0.20333333333333334" prefHeight="400.0" prefWidth="600.0">
+                           <items>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <TreeView fx:id="dataZfTreeView" />
+                                    <AnchorPane>
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <Button fx:id="addRtu" contentDisplay="CENTER" disable="true" mnemonicParsing="false" text="新建RTU" />
+                                                <Button fx:id="deleteRtu" contentDisplay="CENTER" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="删除RTU" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <SplitPane dividerPositions="0.5, 0.5" orientation="VERTICAL">
+                                 <items>
+                                    <TableView fx:id="tabForward">
+                                       <columns>
+                                          <TableColumn fx:id="zfNumColumn" prefWidth="75.0" text="编号" />
+                                          <TableColumn fx:id="zfNameColumn" prefWidth="75.0" text="名称" />
+                                          <TableColumn fx:id="zfAddrColumn" prefWidth="75.0" text="地址" />
+                                          <TableColumn fx:id="zfdotTypeColumn" prefWidth="75.0" text="对应点类型" />
+                                          <TableColumn fx:id="zfdotAddrColumn" prefWidth="75.0" text="对应点地址" />
+                                          <TableColumn fx:id="zfdotColumn" prefWidth="75.0" text="对应点" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <HBox alignment="CENTER" spacing="12.0">
+                                       <children>
+                                          <Button fx:id="zfInsertButton" mnemonicParsing="false" text="插入" />
+                                          <Button fx:id="zfDeleteButton" mnemonicParsing="false" text="删除" />
+                                          <Button fx:id="zfAllButton" mnemonicParsing="false" text="全选" />
+                                          <Button fx:id="zfUnselectAllButton" mnemonicParsing="false" text="取消全选">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <TableView fx:id="tabDotForward">
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </items>
+                              </SplitPane>
+                           </items>
+                        </SplitPane>
+                        <HBox alignment="CENTER" spacing="12.0">
+                           <children>
+                              <Button fx:id="saveConfig" mnemonicParsing="false" text="保存配置" />
+                              <Button fx:id="clearConfig" mnemonicParsing="false" text="清空配置" />
+                              <Button fx:id="freshConfig" mnemonicParsing="false" text="刷新" />
+                              <Button fx:id="exitConfig" mnemonicParsing="false" text="退出">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="8.0" />
+                           </padding>
+                        </HBox>
+                     </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

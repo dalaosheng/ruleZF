@@ -1,0 +1,9 @@
+{"configRule":[{"code":"02","address":"001","data":"5","frame":0},{"code":"01","address":"002","data":"4","frame":1}],
+"RTU0":[{"config":[{"dotType":"遥信","address":"0","name":"转发遥信0","dot":"烟雾传感器1","dotAddress":"0"},
+	{"dotType":"遥信","address":"1","name":"转发遥信1","dot":"烟雾传感器2","dotAddress":"1"},
+	{"dotType":"遥测","address":"0","name":"转发遥测0","dot":"温湿度传感器1（温度）","dotAddress":"0"},{
+	"dotType":"遥测","address":"1","name":"转发遥测1","dot":"温湿度传感器1（湿度）","dotAddress":"1"}]}],
+"RTU1":[{"config":[{"dotType":"遥信","address":"0","name":"转发遥信0","dot":"烟雾传感器1","dotAddress":"0"},
+	{"dotType":"遥信","address":"1","name":"转发遥信1","dot":"烟雾传感器2","dotAddress":"1"},
+	{"dotType":"遥测","address":"0","name":"转发遥测0","dot":"温湿度传感器1（温度）","dotAddress":"0"},
+	{"dotType":"遥测","address":"1","name":"转发遥测1","dot":"温湿度传感器1（湿度）","dotAddress":"1"}]}]}
